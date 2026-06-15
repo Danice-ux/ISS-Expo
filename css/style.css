@@ -1,0 +1,110 @@
+:root {
+  --pixel-size: 2px;
+  --grid-cell: calc( var(--pixel-size) * 16);
+  --bg: #403f40;
+}
+
+.pixelify-sans {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --pixel-size: 3px;
+  }
+}
+@media (min-width: 1000px) {
+  :root {
+    --pixel-size: 4px;
+  }
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#border{
+    width: calc(var(--pixel-size) * 320);
+    height: calc(var(--pixel-size) * 290);
+    background-color: white;
+    background-image: url(../media/grass.jpeg);
+    border: solid #000000;
+}
+
+#control{
+    position: absolute;
+    top: 0px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.pixel-art {
+  image-rendering: pixelated;
+}
+
+
+.character {
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
+  position: absolute;
+  overflow: hidden;
+}
+
+.shadow {
+  width: calc(var(--grid-cell) * 2);
+  height: calc(var(--grid-cell) * 2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("https://assets.codepen.io/21542/DemoRpgCharacterShadow.png") no-repeat no-repeat;
+  background-size: 100%;
+}
+
+.character_spritesheet {
+  position: absolute;
+  background: url("../media/mimikyu.png") no-repeat no-repeat;
+  background-size: 100%;
+  width: calc(var(--grid-cell) * 4);
+  height: calc(var(--grid-cell) * 6);
+}
+
+.character[facing=right] .character_spritesheet {
+    background-position-y: calc(var(--pixel-size) * -96);
+  
+}
+
+.character[facing=up] .character_spritesheet {
+  background-position-y: calc(var(--pixel-size) * -32);  
+  
+}
+
+.character[facing=left] .character_spritesheet {
+  background-position-y: calc(var(--pixel-size) * -64);
+}
+
+.character[walking=true] .character_spritesheet {
+  animation: walkAnimation 1.2s steps(4) infinite;
+}
+
+@keyframes walkAnimation {
+  from {
+    transform: translate3d(0%, 0%, 0);
+  }
+  to {
+    transform: translate3d(5%, 0%, 0);
+  }
+}
