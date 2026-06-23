@@ -1,5 +1,4 @@
 const socket = io('https://serveriss.onrender.com/');
-
 let pressedDirect = [];
 
 document.addEventListener('pointerdown', () => {
@@ -90,3 +89,23 @@ document.addEventListener("keyup", (e) => {
             socket.emit('directData', pressedDirect);
    }
 });
+
+var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                let result = JSON.parse(this.responseText) ;
+                console.log(result[1].message)
+                document.addEventListener("keydown", (e) => {
+   if( e.code == "KeyB"){
+      let message = result[1].message;
+      socket.emit('message', message)
+   }
+})
+            }
+        };
+        xmlhttp.open("GET", "js/messages.json", true);
+        xmlhttp.send();
+
+
+

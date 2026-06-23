@@ -1,0 +1,38 @@
+[
+  {
+    "number": 1,
+    "message": "Welcome to Oboglio"
+  },
+  {
+    "number": 2,
+    "message": "Seems like theres construction going on. no going this way..."
+  },
+  {
+    "number": 3,
+    "message": "Theres dirt on the path! lets follow it"
+  },
+  {
+    "number": 4,
+    "message": "The path is blocked. lets go back"
+  },
+  {
+    "number": 5,
+    "message": "Fight Ogob to get your soap shard!"
+  },
+  {
+    "number": 6,
+    "message": "You beat him! Return to your ship to get your next shard!"
+  },
+  {
+    "number": 7,
+    "message": "You lost..... Try again?"
+  },
+  {
+    "number": 8,
+    "message": "please save us from the bad bacteria! they've taken over multiple planets! stop them using the power of cleanliness!"
+  },
+  {
+    "number": 9,
+    "message": "follow the dirt to"
+  }
+]

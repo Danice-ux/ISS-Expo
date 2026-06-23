@@ -29,15 +29,18 @@ html, body {
 
 body {
   background: var(--bg);
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  background-image: url(../media/space_back.gif);
 }
 #border{
-    width: calc(var(--pixel-size) * 320);
-    height: calc(var(--pixel-size) * 290);
+    position: relative;
+    width: calc(var(--pixel-size) * 900);
+    height: calc(var(--pixel-size) * 600);
     background-color: white;
-    background-image: url(../media/grass.jpeg);
+    background-image: url(../media/floor.jpg);
+    background-size: calc(var(--pixel-size) * 50);
     border: solid #000000;
 }
 
@@ -50,6 +53,15 @@ body {
     border-radius: 30px;
     text-decoration: none;
     color: #000000;
+}
+
+#fence{
+  position: absolute;
+  width:calc(var(--pixel-size) * 800);
+  height: calc(var(--pixel-size) * 500);
+    border: 100px solid transparent;
+  border-image: url(../media/fence.png) 40% round;
+  z-index: 10;
 }
 
 .pixel-art {
@@ -107,4 +119,10 @@ body {
   to {
     transform: translate3d(5%, 0%, 0);
   }
+}
+
+#level2{
+  z-index: 20;
+  position: fixed;
+  top: 10px;
 }
