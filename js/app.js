@@ -181,13 +181,13 @@ if (x >7 && x < 20){
 
 }
 window.onload = function() {
-    dia.innerHTML = "Damn. i crashed my ship and i've run out of my soap fuel! i really need to get over to planet Ogobolo.. hey is that some dirt on this clean planet?"
+    dia.innerHTML = ""
 
             dia.style.display = "block";
 
             setTimeout(() => {
                 dia.style.display = "none";
-            }, 7000);
+            }, 10000);
 };
 
 

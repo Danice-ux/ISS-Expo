@@ -126,19 +126,18 @@ body {
   position: fixed;
   top: 10px;
 }
-#dialog{
-  /* display: none; */
+#dialog {
   position: fixed;
-  background-image: url('../media/text.png');
-  background-repeat: no-repeat;
-  background-size:calc(var(--pixel-size) * 150) ;
-  width: calc(var(--pixel-size) * 150);
-  height: calc(var(--pixel-size) * 80);
-  z-index: 30;
-  text-align: center;
-  align-content: center;
-
-}
-#dialog p{
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  min-height: 80px;
+  background-color: #0b091a;
   padding: 20px;
+  font-family: 'Press Start 2P', monospace;
+  border: 4px solid #000;
+  box-shadow: 0 0 0 4px #753fa2, 0 0 0 8px #8b85ff;
+  color: #00ffcc;
+  z-index: 999;
 }
