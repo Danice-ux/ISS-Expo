@@ -18,13 +18,9 @@ let gameState = {
 };
 
 let BATTLE_ZONE = {
-<<<<<<< Updated upstream
-
-=======
     x: 364,
     y: 87,
     radius: 10
->>>>>>> Stashed changes
 };
 
 
