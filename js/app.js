@@ -18,9 +18,13 @@ let gameState = {
 };
 
 let BATTLE_ZONE = {
-    x: 180,
-    y: 180,
-    radius: 20
+<<<<<<< Updated upstream
+
+=======
+    x: 364,
+    y: 87,
+    radius: 10
+>>>>>>> Stashed changes
 };
 
 
@@ -131,6 +135,7 @@ function startBattle() {
     gameState.inBattle = true;
 
     const battle = document.getElementById("battle");
+<<<<<<< Updated upstream
 
     battle.style.display = "block";
 
@@ -143,6 +148,25 @@ function startBattle() {
             setTimeout(() => {
                 dialog.style.display = "none";
             }, 8000);
+=======
+    battle.style.display = "block";
+    map.style.display = "none";
+
+    if (!gameState.boss1IntroShown) {
+
+        gameState.boss1IntroShown = true;
+
+        document.getElementById('dialog').innerHTML =
+            "oh no! this weird alien(?) wants to fight with you for all your soap! luckily you brought your STELLA CARDS. these cards can help you defeat bad guys and obtain soapshards to fuel your ship!";
+
+        const dialog = document.getElementById('dialog');
+        dialog.style.display = "block";
+
+        setTimeout(() => {
+            dialog.style.display = "none";
+        }, 8000);
+    }
+>>>>>>> Stashed changes
 }
 
 function endBattle(win) {
