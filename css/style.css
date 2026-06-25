@@ -88,14 +88,14 @@ body {
 
 .character_spritesheet {
   position: absolute;
-  background: url("../media/mimikyu.png") no-repeat no-repeat;
+  background: url("../media/Lou.png") no-repeat no-repeat;
   background-size: 100%;
   width: calc(var(--grid-cell) * 4);
   height: calc(var(--grid-cell) * 6);
 }
 
 .character[facing=right] .character_spritesheet {
-    background-position-y: calc(var(--pixel-size) * -96);
+    background-position-y: calc(var(--pixel-size) * -66);
   
 }
 
@@ -105,11 +105,11 @@ body {
 }
 
 .character[facing=left] .character_spritesheet {
-  background-position-y: calc(var(--pixel-size) * -64);
+  background-position-y: calc(var(--pixel-size) * -98);
 }
 
 .character[walking=true] .character_spritesheet {
-  animation: walkAnimation 1.2s steps(4) infinite;
+  animation: walkAnimation 0.6s steps(2) infinite;
 }
 
 @keyframes walkAnimation {
@@ -117,7 +117,7 @@ body {
     transform: translate3d(0%, 0%, 0);
   }
   to {
-    transform: translate3d(5%, 0%, 0);
+    transform: translate3d(-75%, 0%, 0);
   }
 }
 
@@ -125,4 +125,20 @@ body {
   z-index: 20;
   position: fixed;
   top: 10px;
+}
+#dialog{
+  /* display: none; */
+  position: fixed;
+  background-image: url('../media/text.png');
+  background-repeat: no-repeat;
+  background-size:calc(var(--pixel-size) * 150) ;
+  width: calc(var(--pixel-size) * 150);
+  height: calc(var(--pixel-size) * 80);
+  z-index: 30;
+  text-align: center;
+  align-content: center;
+
+}
+#dialog p{
+  padding: 20px;
 }

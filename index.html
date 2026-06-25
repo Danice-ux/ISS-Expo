@@ -3,19 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/app.js" defer></script>
     <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/app.js" defer></script>
+    <script src="js/fighting.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="css/figthing.css">
+
     <title>ISS</title>
 </head>
 <body>
-    <button onclick="level2()" id="level2">Level 2</button>
     <a href="controller.html" id="control">Controller site</a>
+    <a href="start.html">startscherm</a>
+    <div id="dialog"><p>dialog</p></div>
     <div id="border">
         <div id="fence"></div>
-    <div class="character" facing="down" walking="true">
-        <div class="shadow pixel-art"></div>
-        <div class="character_spritesheet pixel-art"></div>
-</div>
+
+        <div class="character" facing="down" walking="true">
+            <div class="shadow pixel-art"></div>
+            <div class="character_spritesheet pixel-art"></div>
+        </div>
+    </div>
+
+    <!-- battle -->
+    <div id="battle" style="display: none;">
+        <h2>Boss</h2>
+        <div class="hp-container">
+            <div id="enemyHpBar" class="hp-bar"></div>
+        </div>
+        
+        <div id="enemyHpText">300 / 300</div>
+        <br><br>
+        <h2>Lou</h2>
+        <div class="hp-container">
+            <div id="playerHpBar" class="hp-bar"></div>
+        </div>
+        
+        <div id="playerHpText">200 / 200</div>
+        <hr>
+
+        <div id="message">Your turn.</div>
+        <div id="hand"></div>
+
+    </div>
+
+
+    
 </body>
 </html>

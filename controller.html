@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,5 +22,44 @@
         <button value="down"></button>
         <button value="right"></button>
     </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
+    <script src="js/controller.js" defer></script>
+    <link rel="stylesheet" href="css/controller.css">
+    <title>Game Controller</title>
+</head>
+<body>
+    <div id="portrait">
+        <p id="pturn">Please turn screen to landscape</p>
+        <img src="media/turn.png" alt="" id="turn">
+    </div>
+
+    <div class="controller-container">
+        <div class="action-buttons">
+            <button value="Y" id="btn-y">Y</button>
+            <div class="middle-row">
+                <button value="X" id="btn-x">X</button>
+                <button value="B" id="btn-b">B</button>
+            </div>
+            <button value="A" id="btn-a">A</button>
+        </div>
+
+        <div id="Tpad" class="dpad">
+            <button value="up" id="up">▲</button>
+            <div class="dpad-middle">
+                <button value="left" id="left">◀</button>
+                <button value="right" id="right">▶</button>
+            </div>
+            <button value="down" id="down">▼</button>
+        </div>
+    </div>
+
 </body>
 </html>

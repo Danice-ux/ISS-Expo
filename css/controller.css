@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: rgb(38, 38, 44);
     color: white;
     text-align: center;
@@ -100,4 +100,72 @@ button:active{
         font-size:40px;
         border: none;
     }
+} */
+body {
+    background-color: #1a1a20;
+    margin: 0;
+    overflow: hidden;
+    touch-action: none;
+    font-family: sans-serif;
+}
+
+.controller-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+button {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: none;
+    background: #38406e;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    box-shadow: 0 6px #1c223a;
+    transition: transform 0.1s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    background-color: #7866c9;
+    transform: translateY(4px);
+    box-shadow: 0 2px #1c223a;
+}
+
+.action-buttons, #Tpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0 50px;
+}
+
+.middle-row, .dpad-middle {
+    display: flex;
+    gap: 110px;
+}
+
+#portrait {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #1a1a20;
+    display: none;
+    z-index: 100;
+    text-align: center;
+}
+
+@media (orientation: portrait) {
+    #portrait { display: block; }
 }

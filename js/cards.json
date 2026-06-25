@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Andromeda",
+    "imgname": "andromeda.png",
+    "extraInformation": "The Chained Lady. Heal 50 HP.",
+    "function": "andromeda"
+  },
+  {
+    "name": "Aquila",
+    "imgname": "aquila.png",
+    "extraInformation": "The Eagle. Deal 50 damage.",
+    "function": "aquila"
+  },
+  {
+    "name": "Aquarius",
+    "imgname": "aquarius.png",
+    "extraInformation": "The Water Bearer. Heal 20 HP.",
+    "function": "aquarius"
+  },
+  {
+    "name": "Aries",
+    "imgname": "aries.png",
+    "extraInformation": "The Ram. Deal 40 damage.",
+    "function": "aries"
+  },
+  {
+    "name": "Bootes",
+    "imgname": "bootes.png",
+    "extraInformation": "The Herdsman. Instantly defeat the enemy.",
+    "function": "bootes"
+  },
+  {
+    "name": "Caelum",
+    "imgname": "caelum.png",
+    "extraInformation": "The Chisel. Double attack damage for your next attack.",
+    "function": "caelum"
+  },
+  {
+    "name": "Cancer",
+    "imgname": "cancer.png",
+    "extraInformation": "The Crab. Reduce enemy damage by 50% for one turn.",
+    "function": "cancer"
+  },
+  {
+    "name": "Capricornus",
+    "imgname": "capricornus.png",
+    "extraInformation": "The Sea Goat. Heal 25 HP.",
+    "function": "capricornus"
+  },
+  {
+    "name": "Cassiopeia",
+    "imgname": "cassiopeia.png",
+    "extraInformation": "The Queen Snake. Freeze the enemy for one turn.",
+    "function": "cassiopeia"
+  },
+  {
+    "name": "Chamaeleon",
+    "imgname": "chamaeleon.png",
+    "extraInformation": "The Chamaeleon. Reduce enemy damage by 50% for one turn.",
+    "function": "chamaeleon"
+  },
+  {
+    "name": "Draco",
+    "imgname": "draco.png",
+    "extraInformation": "The Drake. Deal 20 damage.",
+    "function": "draco"
+  },
+  {
+    "name": "Gemini",
+    "imgname": "gemini.png",
+    "extraInformation": "The Twins. Double attack damage and halve enemy damage for one turn.",
+    "function": "gemini"
+  },
+  {
+    "name": "Hercules",
+    "imgname": "hercules.png",
+    "extraInformation": "The Man. Deal 15 damage.",
+    "function": "hercules"
+  },
+  {
+    "name": "Hydra",
+    "imgname": "hydra.png",
+    "extraInformation": "The Water Snake. Deal 50 damage.",
+    "function": "hydra"
+  },
+  {
+    "name": "Leo",
+    "imgname": "leo.png",
+    "extraInformation": "The Lion. Deal 30 damage.",
+    "function": "leo"
+  },
+  {
+    "name": "Libra",
+    "imgname": "libra.png",
+    "extraInformation": "The Scale. Reduce enemy damage by 50% for one turn.",
+    "function": "libra"
+  },
+  {
+    "name": "Lyra",
+    "imgname": "lyra.png",
+    "extraInformation": "The Lyre. Heal 40 HP.",
+    "function": "lyra"
+  },
+  {
+    "name": "Orion",
+    "imgname": "orion.png",
+    "extraInformation": "The Hunter. Deal 40 damage.",
+    "function": "orion"
+  },
+  {
+    "name": "Pegasus",
+    "imgname": "pegasus.png",
+    "extraInformation": "The Pegasus. Reduce enemy damage by 50% for one turn.",
+    "function": "pegasus"
+  },
+  {
+    "name": "Phoenix",
+    "imgname": "phoenix.png",
+    "extraInformation": "The Phoenix. Restore HP to full.",
+    "function": "phoenix"
+  },
+  {
+    "name": "Pisces",
+    "imgname": "pisces.png",
+    "extraInformation": "The Fish. Heal 30 HP.",
+    "function": "pisces"
+  },
+  {
+    "name": "Pyxis",
+    "imgname": "pyxis.png",
+    "extraInformation": "The Compass. Double attack damage for your next attack.",
+    "function": "pyxis"
+  },
+  {
+    "name": "Scorpio",
+    "imgname": "scorpio.png",
+    "extraInformation": "The Scorpion. Deal 20 damage.",
+    "function": "scorpio"
+  },
+  {
+    "name": "Sagittarius",
+    "imgname": "sagittarius.png",
+    "extraInformation": "The Archer. Increase attack damage by 25 for your next attack.",
+    "function": "sagittarius"
+  },
+  {
+    "name": "Taurus",
+    "imgname": "taurus.png",
+    "extraInformation": "The Bull. Deal 25 damage.",
+    "function": "taurus"
+  },
+  {
+    "name": "Virgo",
+    "imgname": "virgo.png",
+    "extraInformation": "The Maiden. Heal 30 HP.",
+    "function": "virgo"
+  }
+]

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1 - Interstellar Space Soap</title>
+    <link rel="stylesheet" href="css/scene1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Nova+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="stars"></div>
+    <div id="stage-3d-viewport"></div>
+
+    <div id="dialogue-box-container">
+        <div id="speaker-badge">???</div>
+        <div id="dialogue-text">Initializing cosmic terminal...</div>
+        
+        <div id="choices-overlay" class="hidden">
+            <div class="choice-prompt" id="prompt-y"><span class="badge yellow">Y</span> <span class="text"></span></div>
+            <div class="choice-prompt-row">
+                <div class="choice-prompt" id="prompt-x"><span class="badge blue">X</span> <span class="text"></span></div>
+                <div class="choice-prompt" id="prompt-b"><span class="badge red">B</span> <span class="text"></span></div>
+            </div>
+            <div class="choice-prompt" id="prompt-a"><span class="badge green">A</span> <span class="text"></span></div>
+        </div>
+
+        <div id="advance-hint">Press [B] to go next</div>
+    </div>
+
+    <div id="loading-screen" class="hidden">
+        <div class="spinner-container">
+            <div class="radar-ping"></div>
+            <div class="loader-spinner"></div>
+        </div>
+        <div class="loading-status">APPROACHING PLANET X...</div>
+            <div class="loading-bar-container">
+            <div id="loading-progress"></div>
+        </div>
+    </div>
+
+    <script src="js/scene1.js" type="module"></script>
+</body>
+</html>
