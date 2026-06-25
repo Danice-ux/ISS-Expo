@@ -182,6 +182,7 @@ function level2() {
     y = 200;
     document.getElementById("border").style.backgroundImage = "url('../media/grass.png')";
             map.style.display = "block"
+            document.getElementById('dirt').style.display = "none"
     BATTLE_ZONE = {
     x: 7,
     y: 180,
