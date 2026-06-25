@@ -7,13 +7,14 @@ const player = {
     maxHp: 200
 };
 
-const enemy = {
+window.enemy = {
     hp: 300,
     maxHp: 300
 };
-
+window.updateBattleUI = updateUI;
+const enemy = window.enemy;
 let playerTurn = true;
-let hand = [];
+window.hand = [];
 let allCards = [];
 
 // =====================
@@ -222,7 +223,7 @@ window.unlockBootes = function unlockBootes() {
             const bootes = data.find(c => c.name === "Bootes");
             if (bootes) allCards.push(bootes);
         });
-        document.getElementById('dialog').innerHTML= "bootes";
+        document.getElementById('dialog').innerHTML= "bootes unlocked! play bootes to defeat the enemy in one card!";
         setTimeout(() => {
             const dialog = document.getElementById('dialog');
             dialog.style.display = "block";
@@ -251,10 +252,10 @@ function getRandomCard() {
 
 function generateStartingHand() {
 
-    hand = [];
+    window.hand = [];
 
     for (let i = 0; i < 5; i++) {
-        hand.push(getRandomCard());
+        window.hand.push(getRandomCard());
     }
 
     renderHand();
@@ -266,8 +267,8 @@ function generateStartingHand() {
 
 function refillHand() {
 
-    while (hand.length < 5) {
-        hand.push(getRandomCard());
+    while (window.hand.length < 5) {
+        window.hand.push(getRandomCard());
     }
 
     renderHand();
@@ -283,7 +284,7 @@ function renderHand() {
 
     handDiv.innerHTML = "";
 
-    hand.forEach((card, index) => {
+    window.hand.forEach((card, index) => {
 
         const cardElement = document.createElement("div");
 
@@ -308,7 +309,7 @@ function playCard(index) {
 
     if (!playerTurn) return;
 
-    const card = hand[index];
+    const card = window.hand[index];
 
     const effect = cardFunctions[card.function];
 
@@ -316,7 +317,7 @@ function playCard(index) {
         effect();
     }
 
-    hand.splice(index, 1);
+    window.hand.splice(index, 1);
 
     refillHand();
 
@@ -428,4 +429,4 @@ if (player.hp <= 0) {
 // START GAME
 // =====================
 
-loadCards();
+window.cardsReady = loadCards();

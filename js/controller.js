@@ -109,3 +109,28 @@ var xmlhttp = new XMLHttpRequest();
 
 
 
+// socket.on("battleStart", (cards) => {
+
+//     const cardDiv = document.getElementById("cards");
+//     cardDiv.innerHTML = "";
+
+//     cards.forEach(card => {
+
+//         const button = document.createElement("button");
+
+//         button.innerHTML = `
+//             <h3>${card.name}</h3>
+//             <p>${card.extraInformation}</p>
+//         `;
+
+//         button.onclick = () => {
+//             socket.emit("cardPlayed", card.function);
+//         };
+
+//         cardDiv.appendChild(button);
+
+//         document.getElementById('controller').style.display= "none"
+
+//     });
+
+// });

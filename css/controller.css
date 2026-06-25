@@ -122,7 +122,7 @@ body {
     padding-bottom: 20px;
 }
 
-button {
+#controller button {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -137,7 +137,7 @@ button {
     -webkit-tap-highlight-color: transparent;
 }
 
-button:active {
+#controller button:active {
     background-color: #7866c9;
     transform: translateY(4px);
     box-shadow: 0 2px #1c223a;
@@ -168,4 +168,26 @@ button:active {
 
 @media (orientation: portrait) {
     #portrait { display: block; }
+}
+
+#cards {
+    display:flex;
+    gap:15px;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.card {
+    width:100px;
+    height:180px;
+    background:white;
+    border:3px solid black;
+    border-radius:10px;
+    padding:5px;
+}
+
+
+.card p {
+    font-size:12px;
 }

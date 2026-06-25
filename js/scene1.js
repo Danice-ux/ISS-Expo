@@ -11,66 +11,40 @@ gsap.from("#dialogue-box-container", {
 
 
 const dialogueTree = {
-        scene1: {
-        start: { speaker: "???", text: "Helloooooooo?? is this even connected-", next: "s1_02" },
-        s1_02: { speaker: "Interstellar Space Saop HQ", text: "Lou? can you *bzzzt* hear- *bzzzt* me-", next: "s1_03" },
-        s1_03: { speaker: "Lou", text: "Hold on dude youre cutting out too much-", next: "s1_04" },
-        s1_04: { speaker: "Ship", text: "*CLANK-CHUGUMPH!* *Ssssssss...*", next: "s1_05" },
-        s1_05: { speaker: "Lou", text: "Well that doesn't sound good...", next: "s1_06" },
-        s1_06: { speaker: "System", text: "WARNING! WARNING! SPACESHIP HIT SOMETHING, FALLING TO NEAREST PLANNET.", next: "s1_07" },
-        s1_07: { speaker: "Lou", text: "We're gonna crash land on Planet X!", next: "EVENT_LOAD_SCENE2" }
+    start: {
+        speaker: "???",
+        text: "Helloooooooo?? is this even connected-",
+        next: "scene_02"
     },
-
-    scene2: {
-        start: { speaker: "System", text: "Impact complete. Damage on ship: minimal.", next: "s2_02" },
-        s2_02: { speaker: "Lou", text: "*Coughs* Ugh... that was a rough landing. I mean at least the ship is still useable..", next: "s2_03" },
-        s2_03: { speaker: "Lou", text: "I guess i should look around the plannet to check for supplies", next: "EVENT_LOAD_SCENE3" },
-
+    scene_02: {
+        speaker: "Basee",
+        text: "Lou? can you *bzzzt* hear- *bzzzt* me-",
+        next: "scene_03"
     },
-
-    scene3: {
-        start: { speaker: "Lou", text: "Wait a second..", next: "s3_01" },
-        s3_01: { speaker: "Lou", text: "That looks like the soap fuel we used back at HQ!", next: "s3_02" },
-        s3_02: { speaker: "Lou", text: "Let me swipe it so i can refuel-", next: "s3_03" },
-        s3_03: { speaker: "???", text: "Looks like we have a little rat trying to steal?", next: "s3_04" },
-        s3_04: { speaker: "Lou", text: "WAHHH DONT ATTACK ME", next: "s3_05" },
-        s3_05: { speaker: "Cereus", text: "This piece of soap belongs to me.", next: "EVENT_LOAD_BOSS1" },
+    scene_03: {
+        speaker: "Lou",
+        text: "Hold on dude youre cutting out too much-",
+        next: "scene_04"
     },
-
-    scene4: {
-        start: { speaker: "Lou", text: "Okay, I survived that... but its not enough fuel to get me back to HQ..", next: "s4_02" },
-        s4_02: { speaker: "Ship", text: "Detecting raw hyper-matter signatures on a neighboring celestial coordinate.", next: "s4_03" },
-        s4_03: { speaker: "Lou", text: "Perfect. Let's patch the secondary boosters up and trace it over.", next: "EVENT_LOAD_SCENE5" }
+    scene_04: {
+        speaker: "Ship",
+        text: "*CLANK-CHUGUMPH!* *Ssssssss...*",
+        next: "scene_05"
     },
-
-    scene5: {
-        start: { speaker: "System", text: "Entering orbit of the green planet... (T_T)", next: "s5_02" },
-        s5_02: { speaker: "Lou", text: "Wow, this place looks way different. Let's set down and look around.", next: "EVENT_LOAD_SCENE6" }
+    scene_05: {
+        speaker: "Lou",
+        text: "Well that doesn't sound good...",
+        next: "scene_06"
     },
-
-    scene6: {
-        start: { speaker: "Sketchy dude", text: "PSSSSSSSTTTTTTTTT......", next: "s6_02" },
-        s6_02: { speaker: "Lou", text: "What the helly?", next: "s6_03" },
-        s6_03: { speaker: "Sketchy dude", text: "I have goods that i think would.. interest you.. heh..", next: "s6_04" },
-        s6_04: { speaker: "Lou", text: "Listen man i'm not interested in buying...", next: "s6_05" },
-        s6_05: { speaker: "Sketchy dude", text: "Trust me.. you want this... YOU WANT BOOTES", next: "s6_06" },
-        s6_06: { speaker: "Lou", text: "Alright man you need to calm down.", next: "s6_07" },
-        s6_07: { speaker: "???", text: "Lou swiftly runs away from the sketchy dude...", next: "s6_03" },
+    scene_06: {
+        speaker: "Ship",
+        text: "WARNING! WARNING! SPACESHIP HIT SOMETHING, FALLING TO NEAREST PLANNET.",
+        next: "scene_07"
     },
-
-    scene7: {
-        start: { speaker: "Yano", text: "Who dares enter my arena.", next: "s7_02" },
-        s7_02: { speaker: "Lou", text: "I don't want any trouble i swear, I'm in need of some soap to fuel my ship to get home!", next: "s7_03" },
-        s7_03: { speaker: "Yano", text: "Well too bad travellar, you are not leaving here alive.", next: "EVENT_LOAD_SCENE8" }
-    },
-
-    scene8: {
-        start: { speaker: "Lou", text: "...", next: "s8_02" },
-        s8_02: { speaker: "Lou", text: ".....", next: "s8_03" },
-        s8_03: { speaker: "Lou", text: "You weren't supposed to get here.", next: "s8_04" },
-        s8_04: { speaker: "Lou", text: "I wonder how you're being got it this far..", next: "s8_05" },
-        s8_05: { speaker: "Lou", text: "Well i guess it doesn't matter anyways..", next: "s8_06" },
-        s8_06: { speaker: "Lou", text: "I can take care of this.", next: "EVENT_LOAD_JUSTLOU" },
+    scene_07: {
+        speaker: "Lou",
+        text: "BASE DO U COPY? IM FALLING TO A PLANNET PLS SAVE MEEEEE-",
+        next: "end" 
     }
 };
 
@@ -90,12 +64,7 @@ function renderNode(nodeKey) {
         isTransitioningToPlanet = true;
         
         setTimeout(() => {
-            if (loadingScreen) {
-                loadingScreen.classList.remove("hidden");
-                void loadingScreen.offsetWidth;
-                loadingScreen.classList.add("visible");
-                startLoadingSimulation();
-            }
+            window.location.href = "index.html";
         }, 1200);
         return;
     }

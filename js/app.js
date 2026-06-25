@@ -23,8 +23,6 @@ let BATTLE_ZONE = {
     radius: 10
 };
 
-
-
 socket.on('directData', (data) => {
      pressedDirect = data;
 });
@@ -55,7 +53,9 @@ if (direction) {
 
 lou.setAttribute("walking", direction ? "true" : "false");
 
-
+if (x == 350){
+    
+}
 
 
 const leftLimit = 7;
@@ -126,7 +126,7 @@ function unlockLevel(level) {
     }
 }
 
-function startBattle() {
+async function startBattle() {
 
     gameState.inBattle = true;
 
@@ -134,12 +134,19 @@ function startBattle() {
     battle.style.display = "block";
     map.style.display = "none";
 
-    if (!gameState.boss1IntroShown) {
+    await window.cardsReady;
 
+    console.log("sending cards:", window.hand);
+
+    socket.emit("battleStart", window.hand);
+
+
+
+    if (!gameState.boss1IntroShown) {
         gameState.boss1IntroShown = true;
 
         document.getElementById('dialog').innerHTML =
-            "oh no! this weird alien(?) wants to fight with you for all your soap! luckily you brought your STELLA CARDS. these cards can help you defeat bad guys and obtain soapshards to fuel your ship!";
+            "oh no! this weird alien(?) wants to fight with you for all your soap!";
 
         const dialog = document.getElementById('dialog');
         dialog.style.display = "block";
@@ -151,18 +158,22 @@ function startBattle() {
 }
 
 function endBattle(win) {
+    console.log("endBattle called", win);
+
     gameState.inBattle = false;
 
-        document.getElementById("battle").style.display = "none";
-        map.style.display = "block"
+    document.getElementById("battle").style.display = "none";
+    map.style.display = "block";
 
+    console.log("map display:", map.style.display);
 
     if (win) {
         gameState.bossesDefeated++;
         unlockLevel(gameState.bossesDefeated + 1);
     }
-}
 
+}
+    window.endBattle = endBattle;
 
 //Level 2
 function level2() {
@@ -170,18 +181,27 @@ function level2() {
     x = 100;
     y = 200;
     document.getElementById("border").style.backgroundImage = "url('../media/grass.png')";
+            map.style.display = "block"
     BATTLE_ZONE = {
     x: 7,
     y: 180,
     radius: 20
     };
-if (x >7 && x < 20){
+
+
+
+window.enemy.hp = 3000;
+window.enemy.maxHp = 3000;
+window.updateBattleUI();
+
+
+if (x >500 && x < 600){
     unlockBootes();
 }
 
 }
 window.onload = function() {
-    dia.innerHTML = ""
+    dia.innerHTML = "Damn. i crashed my ship and i've run out of my soap fuel! <br> i really need to get over to planet Ogobolo.. <br> hey is that some dirt on this clean planet?"
 
             dia.style.display = "block";
 
