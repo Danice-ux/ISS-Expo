@@ -138,3 +138,24 @@ body {
   align-content: center;
 
 }
+#dirt{
+  position: absolute;
+    width: 500px; 
+    height: 100px; 
+    top: 400px; 
+    left: 1000px;
+    background-image: url(../media/dirt.png);
+    background-repeat: repeat;
+    background-size: 100px;
+    z-index: 40;
+}
+#market{ 
+  position: absolute;
+    width: calc(var(--pixel-size) * 800);
+    height: 300px; 
+    top: 800px; 
+    left: 150px;
+    background-image: url(../media/market-removebg-preview.png);
+    background-repeat: repeat;
+    background-size: 650px;
+}

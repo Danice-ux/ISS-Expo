@@ -27,6 +27,8 @@ socket.on('directData', (data) => {
      pressedDirect = data;
 });
 
+
+
 const speed = 1;
 //lou starts here
 let x = 150; 
@@ -61,7 +63,7 @@ if (x == 350){
 const leftLimit = 7;
 const rightLimit = 815;
 const topLimit = 7;
-const bottomLimit = 497;
+const bottomLimit = 182;
 if (x < leftLimit) { x = leftLimit; }
 if (x > rightLimit) { x = rightLimit; }
 if (y < topLimit) { y = topLimit; }
@@ -71,8 +73,8 @@ const CAMERA_LEFT_OFFSET_PX = 140;
 const CAMERA_TOP_OFFSET_PX = 120;
 
 
-// console.log('x:'+ x); 
-// console.log ("y:"+ y);
+console.log('x:'+ x); 
+console.log ("y:"+ y);
 //213 513
 const camera_transform_left = -x*pixelSize+(pixelSize * CAMERA_LEFT_OFFSET_PX);
 const camera_transform_top = -y*pixelSize+(pixelSize * CAMERA_TOP_OFFSET_PX);
@@ -126,9 +128,41 @@ function unlockLevel(level) {
     }
 }
 
+function resetBattle() {
+    console.log("Before reset:", window.enemy.hp, window.enemy.maxHp);
+
+    if (gameState.level === 2) {
+        window.enemy.hp = 3000;
+        window.enemy.maxHp = 3000;
+    } else {
+        window.enemy.hp = 1000;
+        window.enemy.maxHp = 1000;
+    }
+
+    console.log("After reset:", window.enemy.hp, window.enemy.maxHp);
+
+    window.updateBattleUI();
+
+    document.getElementById("battle").style.display = "none";
+    map.style.display = "block";
+}
+
 async function startBattle() {
 
     gameState.inBattle = true;
+
+    if (gameState.level === 2) {
+    window.enemy.hp = 3000;
+    window.enemy.maxHp = 3000;
+    } else {
+        window.enemy.hp = 300;
+        window.enemy.maxHp = 300;
+    }
+
+window.resetBattleState();
+
+    window.resetBattleState()
+
 
     const battle = document.getElementById("battle");
     battle.style.display = "block";
@@ -161,7 +195,7 @@ function endBattle(win) {
     console.log("endBattle called", win);
 
     gameState.inBattle = false;
-
+    resetBattle();
     document.getElementById("battle").style.display = "none";
     map.style.display = "block";
 
@@ -183,12 +217,14 @@ function level2() {
     document.getElementById("border").style.backgroundImage = "url('../media/grass.png')";
             map.style.display = "block"
             document.getElementById('dirt').style.display = "none"
+            document.getElementById('market').style.display = "none"
     BATTLE_ZONE = {
     x: 7,
     y: 180,
     radius: 20
     };
 
+    
 
 
 window.enemy.hp = 3000;
@@ -217,4 +253,17 @@ window.onload = function() {
       alert(message);
      }
    })
+
+//    socket.on("cardPlayed", (cardFunction) => {
+
+//     if (!gameState.inBattle) return;
+
+//     const index = window.hand.findIndex(
+//         card => card.function === cardFunction
+//     );
+
+//     if (index !== -1) {
+//         window.playCard(index);
+//     }
+// });
    

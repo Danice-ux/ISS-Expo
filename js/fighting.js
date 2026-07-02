@@ -8,7 +8,7 @@ const player = {
 };
 
 window.enemy = {
-    hp: 300,
+    hp: 30,
     maxHp: 300
 };
 window.updateBattleUI = updateUI;
@@ -328,6 +328,8 @@ function playCard(index) {
     playerTurn = false;
 
     setTimeout(enemyTurn, 1000);
+
+    socket.emit("battleUpdate", window.hand);
 }
 
 // =====================
@@ -391,6 +393,22 @@ function setMessage(text) {
     document.getElementById("message").textContent = text;
 }
 
+window.resetBattleState = function () {
+    player.hp = player.maxHp;
+
+    attackMultiplier = 1;
+    attackBonus = 0;
+    defenseMultiplier = 1;
+    enemyFrozenTurns = 0;
+
+    playerTurn = true;
+
+    setMessage("");
+
+    generateStartingHand();
+    updateUI();
+};
+
 // =====================
 // WIN / LOSE
 // =====================
@@ -428,5 +446,5 @@ if (player.hp <= 0) {
 // =====================
 // START GAME
 // =====================
-
+// window.playCard = playCard();
 window.cardsReady = loadCards();

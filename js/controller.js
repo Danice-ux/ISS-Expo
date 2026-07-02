@@ -109,7 +109,7 @@ var xmlhttp = new XMLHttpRequest();
 
 
 
-// socket.on("battleStart", (cards) => {
+// function drawCards(cards) {
 
 //     const cardDiv = document.getElementById("cards");
 //     cardDiv.innerHTML = "";
@@ -125,12 +125,20 @@ var xmlhttp = new XMLHttpRequest();
 
 //         button.onclick = () => {
 //             socket.emit("cardPlayed", card.function);
+//     console.log("Sending", card.function);
+//     socket.emit("cardPlayed", card.function);
 //         };
 
 //         cardDiv.appendChild(button);
-
-//         document.getElementById('controller').style.display= "none"
-
 //     });
 
+//     document.getElementById("controller").style.display = "none";
+// }
+
+// socket.on("battleStart", (cards) => {
+//     drawCards(cards);
+// });
+
+// socket.on("battleUpdate", (cards) => {
+//     drawCards(cards);
 // });
